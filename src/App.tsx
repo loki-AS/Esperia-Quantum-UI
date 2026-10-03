@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { PageTransition } from './components/MotionWrappers';
 import {
   LandingPage,
   ContactPage,
@@ -192,9 +194,10 @@ export default function App() {
   };
 
   return (
-    <>
-      {currentPage === 'why-esperia' ? (
-        <WhyEsperiaPage
+    <AnimatePresence mode="wait">
+      <PageTransition key={currentPage}>
+        {currentPage === 'why-esperia' ? (
+          <WhyEsperiaPage
           onNavigateToHome={navigateToHome}
           onNavigateToWorks={navigateToWorks}
           onNavigateToContact={navigateToContact}
@@ -335,6 +338,7 @@ export default function App() {
           onViewTasConnect={navigateToTasConnect}
         />
       )}
-    </>
+      </PageTransition>
+    </AnimatePresence>
   );
 }

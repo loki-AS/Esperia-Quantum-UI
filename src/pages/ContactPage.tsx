@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronLeft } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import EsperiaEmblem from '../components/EsperiaEmblem';
+import {
+  CinematicReveal,
+  CinematicHeading,
+  MotionButton,
+  MotionCard,
+} from '../components/MotionWrappers';
+import QuantumCanvas from '../components/QuantumCanvas';
 
 interface ContactPageProps {
   onNavigateToHome: (sectionId?: string) => void;
@@ -145,6 +152,9 @@ export default function ContactPage({
           {/* Subtle Ambient Radial Glow */}
           <div className="absolute top-0 right-1/4 w-[600px] h-[350px] bg-[#1A382B]/30 rounded-full blur-[120px] pointer-events-none z-0" />
 
+          {/* Ambient Quantum Constellation */}
+          <QuantumCanvas colorScheme="teal" opacity={0.5} particleCount={24} />
+
           <div className="relative z-10 max-w-[1440px] mx-auto w-full h-full px-6 sm:px-10 lg:px-16 pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 flex-1 flex flex-col justify-center">
 
             {/* Esperia Geometric Mark Watermark — locked to 1440px container */}
@@ -158,25 +168,26 @@ export default function ContactPage({
             <div className="relative z-10 max-w-[862px] flex flex-col items-start">
               {/* Home Button */}
               <div className="mb-6 sm:mb-7">
-                <button
-                  type="button"
+                <MotionButton
                   onClick={() => onNavigateToHome()}
                   className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 hover:bg-black/60 text-[#D8E6E3] hover:text-white text-[12px] font-manrope font-semibold transition-all duration-200 cursor-pointer border border-white/10 shadow-sm"
                 >
                   <ChevronLeft size={14} className="text-white/80" />
                   <span>Home</span>
-                </button>
+                </MotionButton>
               </div>
 
               {/* Headline: Connect with us */}
-              <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-semibold text-white font-parkinsans tracking-tight leading-[1.16] sm:leading-[1.14] mb-5 sm:mb-6">
+              <CinematicHeading className="text-4xl sm:text-6xl lg:text-[68px] font-semibold text-white font-parkinsans tracking-tight leading-[1.16] sm:leading-[1.14] mb-5 sm:mb-6">
                 Connect with us
-              </h1>
+              </CinematicHeading>
 
               {/* Subtitle: Let's build something enduring. */}
-              <p className="text-white/90 text-[16px] sm:text-[18px] lg:text-[19px] font-normal font-manrope leading-[1.78] sm:leading-[1.8]">
-                Let&rsquo;s build something enduring.
-              </p>
+              <CinematicReveal delay={0.2}>
+                <p className="text-white/90 text-[16px] sm:text-[18px] lg:text-[19px] font-normal font-manrope leading-[1.78] sm:leading-[1.8]">
+                  Let&rsquo;s build something enduring.
+                </p>
+              </CinematicReveal>
             </div>
           </div>
         </section>
@@ -193,7 +204,7 @@ export default function ContactPage({
             {/* ========================================================== */}
             <div className="w-full lg:w-[58%] xl:w-[778px] flex flex-col">
               {/* Heading Section (#3019:1221) */}
-              <div className="mb-14">
+              <CinematicReveal direction="up" className="mb-14">
                 <h2 className="text-3xl sm:text-4xl lg:text-[48px] font-bold text-[#0D0D0D] font-parkinsans leading-[1.28] sm:leading-[1.25] tracking-tight mb-6 max-w-[575px]">
                   We are always ready to <span className="text-[#C5445A]">help you</span> and answer your questions
                 </h2>
@@ -201,63 +212,69 @@ export default function ContactPage({
                 <p className="text-[#6B7280] text-[16px] font-normal font-manrope leading-[1.75] max-w-[587px]">
                   Pacific hake false trevally queen parrotfish black prickleback mosshead warbonnet sweeper! Greenling sleeper.
                 </p>
-              </div>
+              </CinematicReveal>
 
               {/* Studio Cards Grid (#3019:1227) */}
               <div className="flex flex-col gap-6 max-w-[738px]">
                 {/* Row 1: US & Malaysia (#3019:1228) */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {/* United States - Headquarters (#3019:1229) */}
-                  <div className="bg-[#FAFAFA] rounded-[30px] p-[32px] flex flex-col justify-between border border-transparent hover:border-[#C5445A]/20 transition-all duration-300 group shadow-sm hover:shadow-md">
-                    <div>
-                      <span className="text-[13px] font-semibold text-[#555555] font-manrope leading-[24px] block uppercase tracking-wider mb-2">
-                        UNITED STATES - HEAD QUARTERS
-                      </span>
-                      <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors pb-5">
-                        Esperia LLC<br />Wyoming, United States
-                      </h3>
-                    </div>
+                  <CinematicReveal delay={0.1} direction="up">
+                    <MotionCard className="bg-[#FAFAFA] rounded-[30px] p-[32px] flex flex-col justify-between border border-transparent hover:border-[#C5445A]/20 transition-all duration-300 group shadow-sm hover:shadow-md">
+                      <div>
+                        <span className="text-[13px] font-semibold text-[#555555] font-manrope leading-[24px] block uppercase tracking-wider mb-2">
+                          UNITED STATES - HEAD QUARTERS
+                        </span>
+                        <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors pb-5">
+                          Esperia LLC<br />Wyoming, United States
+                        </h3>
+                      </div>
 
-                    <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] pt-2 border-t border-gray-100/80">
-                      <div>hello@esperia.me</div>
-                      <div>+91-123 456 765</div>
-                    </div>
-                  </div>
+                      <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] pt-2 border-t border-gray-100/80">
+                        <div>hello@esperia.me</div>
+                        <div>+91-123 456 765</div>
+                      </div>
+                    </MotionCard>
+                  </CinematicReveal>
 
                   {/* Malaysia (#3019:1234) */}
-                  <div className="bg-[#FAFAFA] rounded-[30px] p-[32px] flex flex-col justify-between border border-transparent hover:border-[#C5445A]/20 transition-all duration-300 group shadow-sm hover:shadow-md">
-                    <div>
-                      <span className="text-[13px] font-semibold text-[#555555] font-manrope leading-[24px] block uppercase tracking-wider mb-2">
-                        MALAYSIA
-                      </span>
-                      <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors pb-5">
-                        Esperia Quantum Sdn Bhd<br />Kuala Lumpur, Malaysia
-                      </h3>
-                    </div>
+                  <CinematicReveal delay={0.15} direction="up">
+                    <MotionCard className="bg-[#FAFAFA] rounded-[30px] p-[32px] flex flex-col justify-between border border-transparent hover:border-[#C5445A]/20 transition-all duration-300 group shadow-sm hover:shadow-md">
+                      <div>
+                        <span className="text-[13px] font-semibold text-[#555555] font-manrope leading-[24px] block uppercase tracking-wider mb-2">
+                          MALAYSIA
+                        </span>
+                        <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors pb-5">
+                          Esperia Quantum Sdn Bhd<br />Kuala Lumpur, Malaysia
+                        </h3>
+                      </div>
 
-                    <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] pt-2 border-t border-gray-100/80">
-                      <div>hello@esperia.me</div>
-                      <div>+91-123 456 765</div>
-                    </div>
-                  </div>
+                      <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] pt-2 border-t border-gray-100/80">
+                        <div>hello@esperia.me</div>
+                        <div>+91-123 456 765</div>
+                      </div>
+                    </MotionCard>
+                  </CinematicReveal>
                 </div>
 
                 {/* Row 2: India Hub (#3019:1239) */}
-                <div className="bg-[#FAFAFA] rounded-[30px] p-[32px] flex flex-col justify-between border border-transparent hover:border-[#C5445A]/20 transition-all duration-300 group shadow-sm hover:shadow-md">
-                  <div>
-                    <span className="text-[13px] font-semibold text-[#555555] font-manrope leading-[24px] block uppercase tracking-wider mb-2">
-                      INDIA
-                    </span>
-                    <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors pb-5">
-                      Esperia Studio
-                    </h3>
-                  </div>
+                <CinematicReveal delay={0.2} direction="up">
+                  <MotionCard className="bg-[#FAFAFA] rounded-[30px] p-[32px] flex flex-col justify-between border border-transparent hover:border-[#C5445A]/20 transition-all duration-300 group shadow-sm hover:shadow-md">
+                    <div>
+                      <span className="text-[13px] font-semibold text-[#555555] font-manrope leading-[24px] block uppercase tracking-wider mb-2">
+                        INDIA
+                      </span>
+                      <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors pb-5">
+                        Esperia Studio
+                      </h3>
+                    </div>
 
-                  <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] pt-2 border-t border-gray-100/80">
-                    <div>hello@esperia.me</div>
-                    <div>+91-123 456 765</div>
-                  </div>
-                </div>
+                    <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] pt-2 border-t border-gray-100/80">
+                      <div>hello@esperia.me</div>
+                      <div>+91-123 456 765</div>
+                    </div>
+                  </MotionCard>
+                </CinematicReveal>
               </div>
             </div>
 
@@ -267,7 +284,7 @@ export default function ContactPage({
             <div className="w-full lg:w-[42%] xl:w-[481px] flex flex-col items-center lg:items-end flex-shrink-0 relative">
               <div className="relative w-full max-w-[481px] min-h-[518px] select-none z-10">
                 {/* Custom Scooped Radial Gradient Background Container */}
-                <div
+                <MotionCard
                   className="w-full min-h-[518px] rounded-[30px] p-[30px] sm:p-[36px] text-white shadow-2xl relative overflow-hidden flex flex-col justify-between"
                   style={{
                     background:
@@ -303,8 +320,7 @@ export default function ContactPage({
                           Thank you for reaching out. Your request has been dispatched to our team at{' '}
                           <span className="text-white font-medium">nammatradeofficial@gmail.com</span>. We will respond promptly.
                         </p>
-                        <button
-                          type="button"
+                        <MotionButton
                           onClick={() => {
                             setIsSubmitted(false);
                             setFormData({ fullName: '', email: '', subject: '', message: '' });
@@ -313,7 +329,7 @@ export default function ContactPage({
                           className="mt-4 px-5 py-2 rounded-full border border-white/20 hover:border-white text-xs font-bold uppercase tracking-wider text-white hover:bg-white/10 transition-all cursor-pointer"
                         >
                           Send another message
-                        </button>
+                        </MotionButton>
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10">
@@ -330,7 +346,7 @@ export default function ContactPage({
                         )}
 
                         {/* Full name Field */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col group/input">
                           <input
                             type="text"
                             name="name"
@@ -344,7 +360,7 @@ export default function ContactPage({
                         </div>
 
                         {/* Email Field */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col group/input">
                           <input
                             type="email"
                             name="email"
@@ -358,7 +374,7 @@ export default function ContactPage({
                         </div>
 
                         {/* Subject Field */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col group/input">
                           <input
                             type="text"
                             name="subject"
@@ -371,7 +387,7 @@ export default function ContactPage({
                         </div>
 
                         {/* Message Field */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col group/input">
                           <textarea
                             rows={4}
                             name="message"
@@ -386,10 +402,10 @@ export default function ContactPage({
 
                         {/* Send Button (#3019:1284) */}
                         <div className="flex justify-end pt-4">
-                          <button
+                          <MotionButton
                             type="submit"
                             disabled={isSubmitting}
-                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#F56F6A] to-[#C5445A] text-white font-manrope font-semibold text-[14px] shadow-sm hover:shadow-md hover:brightness-105 active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed transition-all cursor-pointer"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#F56F6A] to-[#C5445A] text-white font-manrope font-semibold text-[14px] shadow-sm hover:shadow-md hover:brightness-105 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
                           >
                             {isSubmitting ? (
                               <>
@@ -431,12 +447,12 @@ export default function ContactPage({
                                 </svg>
                               </>
                             )}
-                          </button>
+                          </MotionButton>
                         </div>
                       </form>
                     )}
                   </div>
-                </div>
+                </MotionCard>
               </div>
 
               {/* Watermark Emblem positioned as per reference screenshot */}

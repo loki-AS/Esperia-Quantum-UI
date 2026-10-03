@@ -4,6 +4,12 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import {
+  CinematicReveal,
+  CinematicHeading,
+  MotionButton,
+  MotionCard,
+} from '../components/MotionWrappers';
 
 interface YoungGeniusDetailPageProps {
   onBack: () => void;
@@ -54,30 +60,31 @@ export default function YoungGeniusDetailPage({
 
         {/* Back Link */}
         <div className="mb-8 sm:mb-12">
-          <button
-            type="button"
+          <MotionButton
             onClick={onBack}
             className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#111111] hover:text-[#C5445A] transition-colors cursor-pointer group"
           >
             <ChevronLeft size={16} className="transition-transform duration-200 group-hover:-translate-x-1" />
             <span>BACK</span>
-          </button>
+          </MotionButton>
         </div>
 
         {/* Hero Section */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
           <div className="lg:col-span-6 flex flex-col justify-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold font-['Parkinsans',sans-serif] tracking-tight text-[#0A0A0A] uppercase leading-[1.16] sm:leading-[1.14] mb-5 sm:mb-6">
+            <CinematicHeading className="text-4xl sm:text-5xl lg:text-[56px] font-extrabold font-['Parkinsans',sans-serif] tracking-tight text-[#0A0A0A] uppercase leading-[1.16] sm:leading-[1.14] mb-5 sm:mb-6">
               YOUNG GENIUS
               <br />
               PROGRAM
-            </h1>
-            <p className="text-[#555555] text-sm sm:text-base lg:text-[17px] font-normal leading-[1.8] max-w-lg font-['Manrope',sans-serif]">
-              AI-driven adaptive learning platform tailoring personalized education experiences at scale for learners, educators, and institutions nationwide.
-            </p>
+            </CinematicHeading>
+            <CinematicReveal delay={0.15}>
+              <p className="text-[#555555] text-sm sm:text-base lg:text-[17px] font-normal leading-[1.8] max-w-lg font-['Manrope',sans-serif]">
+                AI-driven adaptive learning platform tailoring personalized education experiences at scale for learners, educators, and institutions nationwide.
+              </p>
+            </CinematicReveal>
           </div>
           <div className="lg:col-span-6 flex justify-center lg:justify-end">
-            <div className="w-full max-w-[620px] transition-transform duration-500 hover:scale-[1.02]">
+            <div className="w-full max-w-[620px]">
               <img
                 src="/assets/figma/exact_young_genius_hq.png"
                 alt="Young Genius Program Platform"
@@ -108,7 +115,7 @@ export default function YoungGeniusDetailPage({
 
         {/* Case Study Content */}
         <section className="space-y-12 sm:space-y-16 max-w-5xl mb-24">
-          <div>
+          <CinematicReveal direction="up">
             <h2 className="text-xl sm:text-2xl font-bold font-['Parkinsans',sans-serif] text-[#0A0A0A] mb-4">
               Business Challenges &amp; Opportunities
             </h2>
@@ -123,9 +130,9 @@ export default function YoungGeniusDetailPage({
                 Tortor egestas praesent est ut. Pulvinar pretium dui amet nullam commodo integer velit. Non cursus volutpat pellentesque magna mauris aliquam ut odio. Nullam at viverra velit sagittis ut enim quam consectetur. Eu nullam massa condimentum scelerisque ut molestie rutrum. Turpis vulputate massa ornare id elit mattis nisl.
               </p>
             </div>
-          </div>
+          </CinematicReveal>
 
-          <div>
+          <CinematicReveal direction="up">
             <h2 className="text-xl sm:text-2xl font-bold font-['Parkinsans',sans-serif] text-[#0A0A0A] mb-4">
               Product Vision &amp; Goals
             </h2>
@@ -137,9 +144,9 @@ export default function YoungGeniusDetailPage({
                 Etiam morbi eleifend rhoncus felis vivamus amet mi convallis. Nibh habitant dignissim elementum purus a. Sit libero parturient dis quam. Dictum tortor posuere dolor in sed semper turpis. A quem erat eros felis risus eget tempor interdum nam vestibulum. Sodales tempor velit metus ac commodo fusce. Consequat non odio a feugiat mi tristique magna libero sollicitudin.
               </p>
             </div>
-          </div>
+          </CinematicReveal>
 
-          <div>
+          <CinematicReveal direction="up">
             <h2 className="text-xl sm:text-2xl font-bold font-['Parkinsans',sans-serif] text-[#0A0A0A] mb-4">
               Our Approach
             </h2>
@@ -148,7 +155,7 @@ export default function YoungGeniusDetailPage({
                 Lorem ipsum dolor sit amet consectetur. Pellentesque sem elementum id dui condimentum adipiscing dui arcu tristique. Odio diam ornare mi amet ut scelerisque. Tristique velit tempus sit aenean mi egestas viverra eleifend. A interdum eget pellentesque aenean et hendrerit sapien pellentesque. Faucibus risus feugiat auctor aliquam lacus. Quam cras vel sed eget erat cum. Nascetur mi lacinia posuere vitae egestas quisque scelerisque. Non quam fermentum dolor sagittis gravida cursus amet rhoncus sem.
               </p>
             </div>
-          </div>
+          </CinematicReveal>
         </section>
 
         {/* Other Works Section */}
@@ -159,46 +166,52 @@ export default function YoungGeniusDetailPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             {/* Watermelon */}
-            <div className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
-                <img src="/assets/figma/other_works_watermelon_hq.png" alt="Watermelon" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              </div>
-              <div className="flex items-center justify-between pt-1">
-                <span className="font-bold text-[15px] text-[#0A0A0A] font-['Parkinsans',sans-serif]">Watermelon</span>
-                <button type="button" onClick={() => onViewWatermelon ? onViewWatermelon() : onBack()}
-                  className="inline-flex items-center gap-1 text-[13px] font-semibold text-[#C5445A] hover:text-[#9e2e41] transition-colors cursor-pointer">
-                  <span>View Details</span><span className="text-xs">&gt;</span>
-                </button>
-              </div>
-            </div>
+            <CinematicReveal delay={0.05} direction="up">
+              <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
+                <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
+                  <img src="/assets/figma/other_works_watermelon_hq.png" alt="Watermelon" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex items-center justify-between pt-1">
+                  <span className="font-bold text-[15px] text-[#0A0A0A] font-['Parkinsans',sans-serif]">Watermelon</span>
+                  <button type="button" onClick={() => onViewWatermelon ? onViewWatermelon() : onBack()}
+                    className="inline-flex items-center gap-1 text-[13px] font-semibold text-[#C5445A] hover:text-[#9e2e41] transition-colors cursor-pointer">
+                    <span>View Details</span><span className="text-xs">&gt;</span>
+                  </button>
+                </div>
+              </MotionCard>
+            </CinematicReveal>
 
             {/* IRIS HR */}
-            <div className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
-                <img src="/assets/figma/exact_iris_hr_hq.png" alt="IRIS HR System" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              </div>
-              <div className="flex items-center justify-between pt-1">
-                <span className="font-bold text-[15px] text-[#0A0A0A] font-['Parkinsans',sans-serif]">IRIS HR System</span>
-                <button type="button" onClick={() => onViewIrisHr ? onViewIrisHr() : onBack()}
-                  className="inline-flex items-center gap-1 text-[13px] font-semibold text-[#C5445A] hover:text-[#9e2e41] transition-colors cursor-pointer">
-                  <span>View Details</span><span className="text-xs">&gt;</span>
-                </button>
-              </div>
-            </div>
+            <CinematicReveal delay={0.1} direction="up">
+              <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
+                <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
+                  <img src="/assets/figma/exact_iris_hr_hq.png" alt="IRIS HR System" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex items-center justify-between pt-1">
+                  <span className="font-bold text-[15px] text-[#0A0A0A] font-['Parkinsans',sans-serif]">IRIS HR System</span>
+                  <button type="button" onClick={() => onViewIrisHr ? onViewIrisHr() : onBack()}
+                    className="inline-flex items-center gap-1 text-[13px] font-semibold text-[#C5445A] hover:text-[#9e2e41] transition-colors cursor-pointer">
+                    <span>View Details</span><span className="text-xs">&gt;</span>
+                  </button>
+                </div>
+              </MotionCard>
+            </CinematicReveal>
 
             {/* TASConnect */}
-            <div className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
-                <img src="/assets/figma/other_works_tasconnect_hq.png" alt="TASConnect" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              </div>
-              <div className="flex items-center justify-between pt-1">
-                <span className="font-bold text-[15px] text-[#0A0A0A] font-['Parkinsans',sans-serif]">TASConnect</span>
-                <button type="button" onClick={() => onViewTasConnect ? onViewTasConnect() : onBack()}
-                  className="inline-flex items-center gap-1 text-[13px] font-semibold text-[#C5445A] hover:text-[#9e2e41] transition-colors cursor-pointer">
-                  <span>View Details</span><span className="text-xs">&gt;</span>
-                </button>
-              </div>
-            </div>
+            <CinematicReveal delay={0.15} direction="up">
+              <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
+                <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
+                  <img src="/assets/figma/other_works_tasconnect_hq.png" alt="TASConnect" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                </div>
+                <div className="flex items-center justify-between pt-1">
+                  <span className="font-bold text-[15px] text-[#0A0A0A] font-['Parkinsans',sans-serif]">TASConnect</span>
+                  <button type="button" onClick={() => onViewTasConnect ? onViewTasConnect() : onBack()}
+                    className="inline-flex items-center gap-1 text-[13px] font-semibold text-[#C5445A] hover:text-[#9e2e41] transition-colors cursor-pointer">
+                    <span>View Details</span><span className="text-xs">&gt;</span>
+                  </button>
+                </div>
+              </MotionCard>
+            </CinematicReveal>
 
           </div>
         </section>

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { CinematicReveal, CinematicHeading, MotionCard, MotionButton, MotionLink } from '../components/MotionWrappers';
 
 interface PrivacyPolicyPageProps {
   onNavigateToHome: (sectionId?: string) => void;
@@ -100,14 +101,12 @@ export default function PrivacyPolicyPage({
           {/* Subtle Ambient Radial Glow */}
           <div className="absolute top-0 right-1/4 w-[600px] h-[350px] bg-[#1A382B]/30 rounded-full blur-[120px] pointer-events-none z-0" />
 
-
-
           {/* Hero Content */}
           <div className="relative z-10 max-w-[1440px] mx-auto w-full px-6 sm:px-10 lg:px-16 pt-28 sm:pt-36 pb-14 sm:pb-20 flex-1 flex flex-col justify-center">
             <div className="max-w-[760px] flex flex-col">
               {/* Home Pill Button */}
               <div className="mb-6 sm:mb-7">
-                <button
+                <MotionButton
                   type="button"
                   onClick={() => onNavigateToHome()}
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-black/20 hover:bg-black/30 text-[#E5E7EB] text-[12px] font-manrope font-semibold transition-all duration-200 cursor-pointer border border-white/5"
@@ -118,19 +117,24 @@ export default function PrivacyPolicyPage({
                     className="w-4 h-4 object-contain"
                   />
                   <span>Home</span>
-                </button>
+                </MotionButton>
               </div>
 
               {/* Title */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white font-parkinsans leading-[1.16] sm:leading-[1.14] tracking-tight mb-5 sm:mb-6">
+              <CinematicHeading
+                as="h1"
+                className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white font-parkinsans leading-[1.16] sm:leading-[1.14] tracking-tight mb-5 sm:mb-6"
+              >
                 Privacy <br />
                 <span className="font-playball text-[#91CBA6] font-normal mr-2">Policy</span>
                 <span className="font-parkinsans font-semibold text-white">&amp; Data Protection</span>
-              </h1>
+              </CinematicHeading>
 
-              <p className="text-[#91CBA6]/90 text-[15px] sm:text-[17px] font-normal max-w-xl font-manrope leading-[1.78] sm:leading-[1.8]">
-                Learn how Esperia Quantum secures your enterprise data, proprietary assets, and personal information across all digital touchpoints.
-              </p>
+              <CinematicReveal direction="up" delay={0.15}>
+                <p className="text-[#91CBA6]/90 text-[15px] sm:text-[17px] font-normal max-w-xl font-manrope leading-[1.78] sm:leading-[1.8]">
+                  Learn how Esperia Quantum secures your enterprise data, proprietary assets, and personal information across all digital touchpoints.
+                </p>
+              </CinematicReveal>
             </div>
           </div>
         </section>
@@ -140,42 +144,45 @@ export default function PrivacyPolicyPage({
       <main className="max-w-[1440px] w-full mx-auto px-6 sm:px-10 lg:px-16 py-14 sm:py-20">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {sections.map((section) => (
-              <div
-                key={section.num}
-                className="bg-[#FAFAFA] border border-slate-200/80 rounded-[28px] p-7 sm:p-9 shadow-xs hover:border-[#17382B]/30 hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-3 mb-5">
-                    <span className="px-3 py-1 rounded-full bg-[#17382B]/10 text-[#17382B] text-xs font-mono font-bold tracking-wider">
-                      SECTION {section.num}
-                    </span>
-                    <span className="w-2 h-2 rounded-full bg-[#C5445A]" />
+            {sections.map((section, idx) => (
+              <CinematicReveal key={section.num} direction="up" delay={0.08 * (idx % 4)}>
+                <MotionCard className="h-full bg-[#FAFAFA] border border-slate-200/80 rounded-[28px] p-7 sm:p-9 shadow-xs hover:border-[#17382B]/30 hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+                  <div>
+                    <div className="flex items-center justify-between gap-3 mb-5">
+                      <span className="px-3 py-1 rounded-full bg-[#17382B]/10 text-[#17382B] text-xs font-mono font-bold tracking-wider">
+                        SECTION {section.num}
+                      </span>
+                      <span className="w-2 h-2 rounded-full bg-[#C5445A]" />
+                    </div>
+                    <h2 className="text-lg sm:text-xl font-bold font-parkinsans text-[#111111] group-hover:text-[#17382B] transition-colors mb-3.5 leading-snug">
+                      {section.title}
+                    </h2>
+                    <p className="text-[14px] text-[#555555] font-manrope leading-[1.8]">
+                      {section.content}
+                    </p>
                   </div>
-                  <h2 className="text-lg sm:text-xl font-bold font-parkinsans text-[#111111] group-hover:text-[#17382B] transition-colors mb-3.5 leading-snug">
-                    {section.title}
-                  </h2>
-                  <p className="text-[14px] text-[#555555] font-manrope leading-[1.8]">
-                    {section.content}
-                  </p>
-                </div>
-              </div>
+                </MotionCard>
+              </CinematicReveal>
             ))}
 
             {/* Direct Support Card - spans both columns */}
-            <div className="md:col-span-2 bg-[#051413] text-white rounded-[28px] p-8 sm:p-10 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
-              <div>
-                <h3 className="text-xl font-bold font-parkinsans mb-2">Have questions about your data?</h3>
-                <p className="text-sm text-slate-300 font-manrope max-w-xl leading-relaxed">
-                  Our security and data governance officers are available to assist with any privacy inquiries, compliance questionnaires, or audit requests.
-                </p>
-              </div>
-              <a
-                href="mailto:nammatradeofficial@gmail.com?subject=Privacy%20Inquiry%20-%20Esperia"
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-[#F56F6A] to-[#C5445A] text-white font-semibold text-sm hover:brightness-110 active:scale-95 transition-all whitespace-nowrap cursor-pointer shrink-0"
-              >
-                Contact Data Desk
-              </a>
+            <div className="md:col-span-2">
+              <CinematicReveal direction="up" delay={0.2}>
+                <div className="bg-[#051413] text-white rounded-[28px] p-8 sm:p-10 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
+                  <div>
+                    <h3 className="text-xl font-bold font-parkinsans mb-2">Have questions about your data?</h3>
+                    <p className="text-sm text-slate-300 font-manrope max-w-xl leading-relaxed">
+                      Our security and data governance officers are available to assist with any privacy inquiries, compliance questionnaires, or audit requests.
+                    </p>
+                  </div>
+                  <MotionLink
+                    href="mailto:nammatradeofficial@gmail.com?subject=Privacy%20Inquiry%20-%20Esperia"
+                    className="px-6 py-3 rounded-full bg-gradient-to-r from-[#F56F6A] to-[#C5445A] text-white font-semibold text-sm hover:brightness-110 transition-all whitespace-nowrap cursor-pointer shrink-0 inline-block text-center"
+                  >
+                    Contact Data Desk
+                  </MotionLink>
+                </div>
+              </CinematicReveal>
             </div>
           </div>
         </div>

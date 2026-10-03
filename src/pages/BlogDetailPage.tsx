@@ -13,6 +13,12 @@ import {
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { BLOGS_DATA, BlogItem } from '../data/blogsData';
+import {
+  CinematicReveal,
+  CinematicHeading,
+  MotionButton,
+  MotionCard,
+} from '../components/MotionWrappers';
 
 interface BlogDetailPageProps {
   blogId?: string;
@@ -186,14 +192,13 @@ export default function BlogDetailPage({
 
         {/* Back Link Button to Blogs Grid */}
         <div className="mb-8 sm:mb-12">
-          <button
-            type="button"
+          <MotionButton
             onClick={onBack}
             className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#111111] hover:text-[#C5445A] transition-colors cursor-pointer group px-3.5 py-2 rounded-full bg-gray-100/70 hover:bg-gray-100"
           >
             <ChevronLeft size={16} className="transition-transform duration-200 group-hover:-translate-x-1" />
             <span>BACK TO BLOGS &amp; NEWSLETTERS</span>
-          </button>
+          </MotionButton>
         </div>
 
         {/* Hero Section: Title, Category & Featured Media */}
@@ -209,14 +214,16 @@ export default function BlogDetailPage({
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] font-bold font-['Parkinsans',sans-serif] tracking-normal text-[#0A0A0A] leading-[1.35] sm:leading-[1.32] lg:leading-[1.35] mb-7 sm:mb-8">
+            <CinematicHeading className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[52px] font-bold font-['Parkinsans',sans-serif] tracking-normal text-[#0A0A0A] leading-[1.35] sm:leading-[1.32] lg:leading-[1.35] mb-7 sm:mb-8">
               {currentBlog.title}
-            </h1>
+            </CinematicHeading>
 
             {/* Subtitle */}
-            <p className="text-[#555555] text-base sm:text-lg font-normal leading-[1.8] max-w-2xl font-['Manrope',sans-serif] mb-7">
-              {currentBlog.subtitle}
-            </p>
+            <CinematicReveal delay={0.15}>
+              <p className="text-[#555555] text-base sm:text-lg font-normal leading-[1.8] max-w-2xl font-['Manrope',sans-serif] mb-7">
+                {currentBlog.subtitle}
+              </p>
+            </CinematicReveal>
 
             {/* Author Meta Strip */}
             <div className="flex items-center flex-wrap gap-4 text-xs sm:text-sm text-[#666666] pt-2 border-t border-gray-100">
@@ -251,12 +258,14 @@ export default function BlogDetailPage({
 
           {/* Right Column: Hero Cover Visual */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="w-full max-w-[560px] rounded-3xl overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.08)] border border-gray-100 bg-[#071F1A] transition-transform duration-500 hover:scale-[1.02]">
-              <img
-                src={currentBlog.coverImage}
-                alt={currentBlog.title}
-                className="w-full h-auto object-cover max-h-[380px]"
-              />
+            <div className="w-full max-w-[560px]">
+              <div className="w-full rounded-3xl overflow-hidden shadow-[0_20px_45px_rgba(0,0,0,0.08)] border border-gray-100 bg-[#071F1A]">
+                <img
+                  src={currentBlog.coverImage}
+                  alt={currentBlog.title}
+                  className="w-full h-auto object-cover max-h-[380px]"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -481,45 +490,46 @@ export default function BlogDetailPage({
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {otherBlogs.map((b) => (
-              <div
-                key={b.id}
-                onClick={() => handleSelectOtherBlog(b.id)}
-                className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group cursor-pointer"
-              >
-                <div>
-                  {/* Thumbnail Container */}
-                  <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
-                    <img
-                      src={b.thumbnailImage || b.coverImage}
-                      alt={b.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+            {otherBlogs.map((b, idx) => (
+              <CinematicReveal key={b.id} delay={idx * 0.05} direction="up">
+                <MotionCard
+                  onClick={() => handleSelectOtherBlog(b.id)}
+                  className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group cursor-pointer h-full"
+                >
+                  <div>
+                    {/* Thumbnail Container */}
+                    <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
+                      <img
+                        src={b.thumbnailImage || b.coverImage}
+                        alt={b.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+
+                    {/* Category Pill */}
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#C5445A] block mb-1">
+                      {b.category}
+                    </span>
+
+                    {/* Title */}
+                    <h3 className="font-bold text-[14px] sm:text-[15px] text-[#0A0A0A] font-['Parkinsans',sans-serif] line-clamp-2 leading-snug group-hover:text-[#C5445A] transition-colors mb-2">
+                      {b.title}
+                    </h3>
+
+                    {/* Author / Date snippet */}
+                    <p className="text-[11px] text-[#6B7280] font-manrope">
+                      {b.author.name} · {b.readTime}
+                    </p>
                   </div>
 
-                  {/* Category Pill */}
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#C5445A] block mb-1">
-                    {b.category}
-                  </span>
-
-                  {/* Title */}
-                  <h3 className="font-bold text-[14px] sm:text-[15px] text-[#0A0A0A] font-['Parkinsans',sans-serif] line-clamp-2 leading-snug group-hover:text-[#C5445A] transition-colors mb-2">
-                    {b.title}
-                  </h3>
-
-                  {/* Author / Date snippet */}
-                  <p className="text-[11px] text-[#6B7280] font-manrope">
-                    {b.author.name} · {b.readTime}
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-between pt-4 border-t border-gray-200/50 mt-4">
-                  <span className="text-[11px] text-[#888888] font-medium">Read Brief</span>
-                  <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-[#C5445A] group-hover:translate-x-1 transition-transform">
-                    <span>&gt;</span>
-                  </span>
-                </div>
-              </div>
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-200/50 mt-4">
+                    <span className="text-[11px] text-[#888888] font-medium">Read Brief</span>
+                    <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-[#C5445A] group-hover:translate-x-1 transition-transform">
+                      <span>&gt;</span>
+                    </span>
+                  </div>
+                </MotionCard>
+              </CinematicReveal>
             ))}
           </div>
         </section>

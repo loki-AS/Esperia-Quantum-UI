@@ -2,6 +2,14 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import EsperiaEmblem from '../components/EsperiaEmblem';
+import {
+  CinematicReveal,
+  CinematicHeading,
+  MotionButton,
+  MotionCard,
+  FloatingBreath,
+} from '../components/MotionWrappers';
+import QuantumCanvas from '../components/QuantumCanvas';
 
 interface OurWorksPageProps {
   onNavigateToHome: (sectionId?: string) => void;
@@ -56,6 +64,9 @@ export default function OurWorksPage({
           {/* Subtle Ambient Radial Glow */}
           <div className="absolute top-0 right-1/4 w-[600px] h-[350px] bg-[#1A382B]/30 rounded-full blur-[120px] pointer-events-none z-0" />
 
+          {/* Ambient Quantum Constellation */}
+          <QuantumCanvas colorScheme="teal" opacity={0.5} particleCount={26} />
+
           {/* Hero Content Area */}
           <div className="relative z-10 max-w-[1440px] mx-auto w-full h-full px-6 sm:px-10 lg:px-16 pt-28 sm:pt-32 pb-14 sm:pb-20 flex-1 flex flex-col justify-center">
 
@@ -67,20 +78,21 @@ export default function OurWorksPage({
               />
             </div>
 
-            {/* 3D Isometric Platform Graphic — locked to 1440px container */}
+            {/* 3D Isometric Platform Graphic with Floating Zero-G Breath */}
             <div className="hidden md:block absolute right-0 sm:right-2 lg:right-6 xl:right-10 top-1/2 -translate-y-1/2 w-[440px] lg:w-[540px] xl:w-[600px] h-auto z-20 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] pointer-events-auto">
-              <img
-                src="/assets/figma/exact_hero_3d_hq.png"
-                alt="AI & Cloud Solutions Ecosystem"
-                className="w-full h-auto object-contain select-none cursor-pointer transform-gpu transition-transform duration-500 ease-out hover:scale-105 active:scale-100 will-change-transform"
-              />
+              <FloatingBreath yRange={[-7, 7]} duration={6}>
+                <img
+                  src="/assets/figma/exact_hero_3d_hq.png"
+                  alt="AI & Cloud Solutions Ecosystem"
+                  className="w-full h-auto object-contain select-none cursor-pointer transform-gpu transition-transform duration-500 ease-out hover:scale-105 active:scale-100 will-change-transform"
+                />
+              </FloatingBreath>
             </div>
 
             <div className="relative z-10 max-w-[640px] lg:max-w-[720px] flex flex-col">
               {/* Home Button */}
               <div className="mb-6 sm:mb-7">
-                <button
-                  type="button"
+                <MotionButton
                   onClick={() => onNavigateToHome()}
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-black/20 hover:bg-black/30 text-[#E5E7EB] text-[12px] font-manrope font-semibold transition-all duration-200 cursor-pointer border border-white/5"
                 >
@@ -90,11 +102,11 @@ export default function OurWorksPage({
                     className="w-4 h-4 object-contain"
                   />
                   <span>Home</span>
-                </button>
+                </MotionButton>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-semibold text-white font-parkinsans leading-[1.18] sm:leading-[1.15] tracking-tight mb-6 sm:mb-7">
+              <CinematicHeading className="text-4xl sm:text-5xl lg:text-[64px] font-semibold text-white font-parkinsans leading-[1.18] sm:leading-[1.15] tracking-tight mb-6 sm:mb-7">
                 <span>Solutions that</span>
                 <span className="block mt-2.5 sm:mt-3">
                   <span className="font-playball text-[#91CBA6] font-normal italic tracking-normal mr-3.5 sm:mr-4">
@@ -102,12 +114,14 @@ export default function OurWorksPage({
                   </span>
                   <span className="font-parkinsans font-semibold text-white">Industries</span>
                 </span>
-              </h1>
+              </CinematicHeading>
 
               {/* Subtitle Description */}
-              <p className="text-[16px] sm:text-[18px] text-[#FFFFFF]/85 font-manrope font-normal leading-[1.78] sm:leading-[1.8] max-w-[580px]">
-                We partner with high-growth startups and global enterprises to design, engineer, and scale transformative digital products that redefine entire industries.
-              </p>
+              <CinematicReveal delay={0.2}>
+                <p className="text-[16px] sm:text-[18px] text-[#FFFFFF]/85 font-manrope font-normal leading-[1.78] sm:leading-[1.8] max-w-[580px]">
+                  We partner with high-growth startups and global enterprises to design, engineer, and scale transformative digital products that redefine entire industries.
+                </p>
+              </CinematicReveal>
             </div>
 
             {/* Mobile-only 3D artwork display */}
@@ -135,7 +149,7 @@ export default function OurWorksPage({
           {/* ------------------------------------------------------------------- */}
           {/* CASE 1: Watermelon (Visual Left, Overlapping Card Right)             */}
           {/* ------------------------------------------------------------------- */}
-          <div className="group relative flex flex-col lg:flex-row items-center">
+          <CinematicReveal direction="up" className="group relative flex flex-col lg:flex-row items-center">
             {/* Visual: Dashboard on Left (w-full lg:w-[64%]) */}
             <div className="w-full lg:w-[64%] z-10">
               <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.07)] border border-slate-100/90 bg-white transition-all duration-500 ease-out group-hover:scale-[1.015] group-hover:-translate-y-1.5 group-hover:shadow-[0_25px_65px_rgba(0,0,0,0.12)]">
@@ -149,7 +163,7 @@ export default function OurWorksPage({
 
             {/* Overlapping Card on Right (w-full lg:w-[50%] lg:-ml-[14%]) */}
             <div className="w-full lg:w-[50%] z-20 mt-[-30px] lg:mt-0 lg:-ml-[14%]">
-              <div className="bg-white rounded-2xl p-8 sm:p-12 lg:p-16 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)] border border-slate-100/80 transition-all duration-300 hover:shadow-[0_35px_75px_-15px_rgba(0,0,0,0.16)] hover:-translate-y-1">
+              <MotionCard className="bg-white rounded-2xl p-8 sm:p-12 lg:p-16 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)] border border-slate-100/80">
                 <h2 className="text-3xl sm:text-4xl font-bold font-['Parkinsans',sans-serif] text-[#0A0A0A] mb-6 tracking-tight leading-[1.2]">
                   Watermelon
                 </h2>
@@ -166,17 +180,17 @@ export default function OurWorksPage({
                     &rarr;
                   </span>
                 </button>
-              </div>
+              </MotionCard>
             </div>
-          </div>
+          </CinematicReveal>
 
           {/* ------------------------------------------------------------------- */}
           {/* CASE 2: Young Genius Program (Overlapping Card Left, Visual Right)   */}
           {/* ------------------------------------------------------------------- */}
-          <div className="group relative flex flex-col-reverse lg:flex-row items-center">
+          <CinematicReveal direction="up" className="group relative flex flex-col-reverse lg:flex-row items-center">
             {/* Overlapping Card on Left (w-full lg:w-[50%] lg:-mr-[14%]) */}
             <div className="w-full lg:w-[50%] z-20 mt-[-30px] lg:mt-0 lg:-mr-[14%]">
-              <div className="bg-white rounded-2xl p-8 sm:p-12 lg:p-16 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)] border border-slate-100/80 transition-all duration-300 hover:shadow-[0_35px_75px_-15px_rgba(0,0,0,0.16)] hover:-translate-y-1">
+              <MotionCard className="bg-white rounded-2xl p-8 sm:p-12 lg:p-16 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)] border border-slate-100/80">
                 <h2 className="text-3xl sm:text-4xl font-bold font-['Parkinsans',sans-serif] text-[#0A0A0A] mb-6 tracking-tight leading-[1.2]">
                   Young Genius Program
                 </h2>
@@ -193,7 +207,7 @@ export default function OurWorksPage({
                     &rarr;
                   </span>
                 </button>
-              </div>
+              </MotionCard>
             </div>
 
             {/* Visual: Dashboard on Right (w-full lg:w-[64%]) */}
@@ -206,12 +220,12 @@ export default function OurWorksPage({
                 />
               </div>
             </div>
-          </div>
+          </CinematicReveal>
 
           {/* ------------------------------------------------------------------- */}
           {/* CASE 3: IRIS HR System (Visual Left, Overlapping Card Right)         */}
           {/* ------------------------------------------------------------------- */}
-          <div className="group relative flex flex-col lg:flex-row items-center">
+          <CinematicReveal direction="up" className="group relative flex flex-col lg:flex-row items-center">
             {/* Visual: Dashboard on Left */}
             <div className="w-full lg:w-[64%] z-10">
               <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.07)] border border-slate-100/90 bg-white transition-all duration-500 ease-out group-hover:scale-[1.015] group-hover:-translate-y-1.5 group-hover:shadow-[0_25px_65px_rgba(0,0,0,0.12)]">
@@ -225,7 +239,7 @@ export default function OurWorksPage({
 
             {/* Overlapping Card on Right */}
             <div className="w-full lg:w-[50%] z-20 mt-[-30px] lg:mt-0 lg:-ml-[14%]">
-              <div className="bg-white rounded-2xl p-8 sm:p-12 lg:p-16 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)] border border-slate-100/80 transition-all duration-300 hover:shadow-[0_35px_75px_-15px_rgba(0,0,0,0.16)] hover:-translate-y-1">
+              <MotionCard className="bg-white rounded-2xl p-8 sm:p-12 lg:p-16 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)] border border-slate-100/80">
                 <h2 className="text-3xl sm:text-4xl font-bold font-['Parkinsans',sans-serif] text-[#0A0A0A] mb-6 tracking-tight leading-[1.2]">
                   IRIS HR System
                 </h2>
@@ -242,17 +256,17 @@ export default function OurWorksPage({
                     &rarr;
                   </span>
                 </button>
-              </div>
+              </MotionCard>
             </div>
-          </div>
+          </CinematicReveal>
 
           {/* ------------------------------------------------------------------- */}
           {/* CASE 4: TASConnect (Overlapping Card Left, Visual Right)             */}
           {/* ------------------------------------------------------------------- */}
-          <div className="group relative flex flex-col-reverse lg:flex-row items-center">
+          <CinematicReveal direction="up" className="group relative flex flex-col-reverse lg:flex-row items-center">
             {/* Overlapping Card on Left */}
             <div className="w-full lg:w-[50%] z-20 mt-[-30px] lg:mt-0 lg:-mr-[14%]">
-              <div className="bg-white rounded-2xl p-8 sm:p-12 lg:p-16 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)] border border-slate-100/80 transition-all duration-300 hover:shadow-[0_35px_75px_-15px_rgba(0,0,0,0.16)] hover:-translate-y-1">
+              <MotionCard className="bg-white rounded-2xl p-8 sm:p-12 lg:p-16 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)] border border-slate-100/80">
                 <h2 className="text-3xl sm:text-4xl font-bold font-['Parkinsans',sans-serif] text-[#0A0A0A] mb-6 tracking-tight leading-[1.2]">
                   TASConnect
                 </h2>
@@ -269,7 +283,7 @@ export default function OurWorksPage({
                     &rarr;
                   </span>
                 </button>
-              </div>
+              </MotionCard>
             </div>
 
             {/* Visual: Showcase on Right */}
@@ -282,7 +296,7 @@ export default function OurWorksPage({
                 />
               </div>
             </div>
-          </div>
+          </CinematicReveal>
 
         </section>
       </main>

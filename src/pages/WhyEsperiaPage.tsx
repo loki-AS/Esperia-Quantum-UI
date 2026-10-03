@@ -2,6 +2,15 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import EsperiaEmblem from '../components/EsperiaEmblem';
+import {
+  CinematicReveal,
+  CinematicHeading,
+  MotionButton,
+  MotionCard,
+  TiltCard,
+  FloatingBreath,
+} from '../components/MotionWrappers';
+import QuantumCanvas from '../components/QuantumCanvas';
 
 interface WhyEsperiaPageProps {
   onNavigateToHome: (sectionId?: string) => void;
@@ -99,6 +108,9 @@ export default function WhyEsperiaPage({
           {/* Subtle Ambient Radial Glow */}
           <div className="absolute top-0 right-1/4 w-[600px] h-[350px] bg-[#1A382B]/30 rounded-full blur-[120px] pointer-events-none z-0" />
 
+          {/* Ambient Quantum Constellation */}
+          <QuantumCanvas colorScheme="teal" opacity={0.5} particleCount={26} />
+
           {/* Hero Content Area */}
           <div className="relative z-10 max-w-[1440px] mx-auto w-full h-full px-6 sm:px-10 lg:px-16 pt-28 sm:pt-32 pb-14 sm:pb-20 flex-1 flex flex-col justify-center">
 
@@ -110,20 +122,21 @@ export default function WhyEsperiaPage({
               />
             </div>
 
-            {/* 3D Saturn / Orbital Planetary Graphic — locked to 1440px container */}
+            {/* 3D Saturn / Orbital Planetary Graphic with Floating Zero-G Breath */}
             <div className="hidden md:block absolute right-0 sm:right-2 lg:right-6 xl:right-10 top-1/2 -translate-y-1/2 w-[440px] lg:w-[550px] xl:w-[613px] h-auto z-20 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] pointer-events-auto">
-              <img
-                src="/assets/figma/whyesperia_hero_3d.png"
-                alt="Esperia Enterprise Delivery Model 3D Graphic"
-                className="w-full h-auto object-contain select-none cursor-pointer transform-gpu transition-transform duration-500 ease-out hover:scale-110 active:scale-105 will-change-transform"
-              />
+              <FloatingBreath yRange={[-8, 8]} duration={6}>
+                <img
+                  src="/assets/figma/whyesperia_hero_3d.png"
+                  alt="Esperia Enterprise Delivery Model 3D Graphic"
+                  className="w-full h-auto object-contain select-none cursor-pointer transform-gpu transition-transform duration-500 ease-out hover:scale-105 active:scale-100 will-change-transform"
+                />
+              </FloatingBreath>
             </div>
 
             <div className="relative z-10 max-w-[640px] lg:max-w-[720px] flex flex-col">
               {/* Home Button */}
               <div className="mb-6 sm:mb-7">
-                <button
-                  type="button"
+                <MotionButton
                   onClick={() => onNavigateToHome()}
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-black/20 hover:bg-black/30 text-[#E5E7EB] text-[12px] font-manrope font-semibold transition-all duration-200 cursor-pointer border border-white/5"
                 >
@@ -133,22 +146,24 @@ export default function WhyEsperiaPage({
                     className="w-4 h-4 object-contain"
                   />
                   <span>Home</span>
-                </button>
+                </MotionButton>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-semibold text-white font-parkinsans leading-[1.18] sm:leading-[1.15] tracking-tight mb-6 sm:mb-7">
+              <CinematicHeading className="text-4xl sm:text-5xl lg:text-[64px] font-semibold text-white font-parkinsans leading-[1.18] sm:leading-[1.15] tracking-tight mb-6 sm:mb-7">
                 <span>Enterprise</span>
                 <span className="block mt-2.5 sm:mt-3">
                   <span className="font-playball text-[#91CBA6] font-normal mr-3 sm:mr-3.5">Delivery</span>
                   <span className="font-parkinsans font-semibold text-white">Model</span>
                 </span>
-              </h1>
+              </CinematicHeading>
 
               {/* Subtitle Description */}
-              <p className="text-[16px] sm:text-[18px] text-[#FFFFFF] font-manrope font-normal leading-[1.78] sm:leading-[1.8] max-w-[580px]">
-                It's how we do it. Many agencies check the same capability boxes. What separates Esperia is the discipline we bring to execution — and the ambition we bring to outcomes.
-              </p>
+              <CinematicReveal delay={0.2}>
+                <p className="text-[16px] sm:text-[18px] text-[#FFFFFF] font-manrope font-normal leading-[1.78] sm:leading-[1.8] max-w-[580px]">
+                  It's how we do it. Many agencies check the same capability boxes. What separates Esperia is the discipline we bring to execution — and the ambition we bring to outcomes.
+                </p>
+              </CinematicReveal>
             </div>
 
             {/* Mobile-only 3D artwork display */}
@@ -176,10 +191,13 @@ export default function WhyEsperiaPage({
               {reasons.map((item, index) => {
                 const isLast = index === reasons.length - 1;
                 return (
-                  <div
+                  <CinematicReveal
                     key={item.number}
-                    className={`group flex items-start gap-5 sm:gap-6 ${index === 0 ? 'pt-0 pb-8 sm:pb-9' : isLast ? 'pt-8 sm:pt-9 pb-0' : 'py-8 sm:py-9'
-                      } ${!isLast ? 'border-b border-[#E5E7EB]' : ''}`}
+                    delay={index * 0.05}
+                    direction="up"
+                    className={`group flex items-start gap-5 sm:gap-6 ${
+                      index === 0 ? 'pt-0 pb-8 sm:pb-9' : isLast ? 'pt-8 sm:pt-9 pb-0' : 'py-8 sm:py-9'
+                    } ${!isLast ? 'border-b border-[#E5E7EB]' : ''}`}
                   >
                     {/* Number Badge Box (80x80px with subtle gradient & minimal hover scale) */}
                     <div
@@ -209,7 +227,7 @@ export default function WhyEsperiaPage({
                         {item.description}
                       </p>
                     </div>
-                  </div>
+                  </CinematicReveal>
                 );
               })}
             </div>
@@ -217,10 +235,11 @@ export default function WhyEsperiaPage({
             {/* -------------------------------------------------------- */}
             {/* RIGHT COLUMN: PARTNERSHIP & CONTACT CTAS (FIGMA 2990:4041)*/}
             {/* -------------------------------------------------------- */}
-            <div className="lg:col-span-5 flex flex-col gap-10 lg:sticky lg:top-8">
-              {/* Card 1: Partnership & Stats (Figma 2990:4043) with minimal hover lift */}
-              <div
-                className="w-full rounded-[30px] p-6 sm:p-[32px] text-white shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+            <div className="lg:col-span-5 flex flex-col gap-10">
+              {/* Card 1: Partnership & Stats (Figma 2990:4043) with 3D Tilt */}
+              <TiltCard
+                maxTilt={3}
+                className="w-full rounded-[30px] p-6 sm:p-[32px] text-white shadow-[0_20px_50px_rgba(0,0,0,0.12)] flex flex-col justify-between"
                 style={{
                   background:
                     'radial-gradient(circle at 26% 15%, #565656 0%, #1D1F1E 100%)',
@@ -264,11 +283,12 @@ export default function WhyEsperiaPage({
                     </span>
                   </div>
                 </div>
-              </div>
+              </TiltCard>
 
-              {/* Card 2: Ready to Transform CTA (Figma 2990:4058 - 4071) with minimal hover lift */}
-              <div
-                className="w-full max-w-[481px] mx-auto lg:mx-0 rounded-[30px] relative overflow-hidden p-7 sm:p-[42px_32px_32px_32px] text-white shadow-[0_20px_50px_rgba(195,87,68,0.22)] hover:shadow-[0_25px_50px_rgba(195,87,68,0.3)] transition-all duration-300 hover:-translate-y-1 min-h-[440px] sm:min-h-[481px] flex flex-col justify-between"
+              {/* Card 2: Ready to Transform CTA (Figma 2990:4058 - 4071) with 3D Tilt */}
+              <TiltCard
+                maxTilt={3}
+                className="w-full max-w-[481px] mx-auto lg:mx-0 rounded-[30px] relative overflow-hidden p-7 sm:p-[42px_32px_32px_32px] text-white shadow-[0_20px_50px_rgba(195,87,68,0.22)] min-h-[440px] sm:min-h-[481px] flex flex-col justify-between"
                 style={{
                   background:
                     'radial-gradient(circle at 100% 15%, #C35744 0%, #870A21 100%)',
@@ -296,10 +316,9 @@ export default function WhyEsperiaPage({
 
                 {/* Floating "Let’s Talk" Pill Button (Figma 2990:4064) */}
                 <div className="relative z-10 flex justify-end mt-8">
-                  <button
-                    type="button"
+                  <MotionButton
                     onClick={() => onNavigateToContact()}
-                    className="group inline-flex items-center gap-3.5 py-2 px-4 rounded-full text-white font-manrope font-semibold text-[15px] sm:text-[16px] shadow-lg hover:brightness-110 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
+                    className="group inline-flex items-center gap-3.5 py-2 px-4 rounded-full text-white font-manrope font-semibold text-[15px] sm:text-[16px] shadow-lg hover:brightness-110 cursor-pointer"
                     style={{
                       background:
                         'linear-gradient(90deg, #F56F6A 0%, #C5445A 100%)',
@@ -322,9 +341,9 @@ export default function WhyEsperiaPage({
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </button>
+                  </MotionButton>
                 </div>
-              </div>
+              </TiltCard>
             </div>
           </div>
         </div>
