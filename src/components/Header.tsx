@@ -131,7 +131,7 @@ export default function Header({
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-2 lg:gap-3 text-[13px] font-manrope">
+        <nav className="hidden md:flex items-center gap-3.5 lg:gap-5 text-[13px] font-manrope">
           {navItems.map((item) => {
             const isActive = activePage === item.id;
             return (
@@ -139,10 +139,10 @@ export default function Header({
                 key={item.id}
                 type="button"
                 onClick={item.onClick}
-                className={`py-1.5 px-3 rounded-full transition-all duration-200 cursor-pointer ${
+                className={`py-1.5 px-1 transition-colors duration-200 cursor-pointer ${
                   isActive
-                    ? 'text-[#F56F6A] font-semibold bg-white/[0.08] shadow-inner'
-                    : 'text-white/85 hover:text-white hover:bg-white/[0.04] font-medium'
+                    ? 'text-[#F56F6A] font-semibold'
+                    : 'text-white/85 hover:text-white font-medium'
                 }`}
               >
                 {item.label}

@@ -7,7 +7,6 @@ import {
   CinematicReveal,
   CinematicHeading,
   TiltCard,
-  FloatingBreath,
   cinematicEase
 } from '../components/MotionWrappers';
 import QuantumCanvas from '../components/QuantumCanvas';
@@ -76,17 +75,13 @@ export default function WhatWeDoPage({
               />
             </div>
 
-            {/* 3D Visual Graphic — with floating zero-G breath */}
+            {/* 3D Visual Graphic — stable with cursor zoom */}
             <div className="hidden md:block absolute right-0 sm:right-2 lg:right-6 xl:right-10 top-1/2 -translate-y-1/2 w-[440px] lg:w-[540px] xl:w-[600px] h-auto z-20 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] pointer-events-auto">
-              <FloatingBreath yRange={[-7, 7]} duration={6}>
-                <motion.img
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.5, ease: cinematicEase }}
-                  src="/assets/figma/whatwedo_hero_exact.png"
-                  alt="Esperia Intelligent Systems Platform"
-                  className="w-full h-auto object-contain select-none cursor-pointer"
-                />
-              </FloatingBreath>
+              <img
+                src="/assets/figma/whatwedo_hero_exact.png"
+                alt="Esperia Intelligent Systems Platform"
+                className="w-full h-auto object-contain select-none cursor-pointer hover:scale-105 transition-transform duration-700 ease-out"
+              />
             </div>
 
             <div className="relative z-10 max-w-[640px] lg:max-w-[720px] flex flex-col">
@@ -156,12 +151,10 @@ export default function WhatWeDoPage({
               {/* Left Feature Card - Exact Figma Card with 3D Tilt */}
               <div className="lg:col-span-5 flex justify-center">
                 <TiltCard maxTilt={3.5} className="w-full max-w-[360px]">
-                  <motion.img
-                    whileHover={{ scale: 1.04 }}
-                    transition={{ duration: 0.4, ease: cinematicEase }}
+                  <img
                     src="/assets/figma/whatwedo_card1_exact.png"
                     alt="01 Engineering & Platforms"
-                    className="w-full h-auto object-contain rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] cursor-pointer"
+                    className="w-full h-auto object-contain rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] cursor-pointer hover:scale-105 transition-transform duration-700 ease-out"
                   />
                 </TiltCard>
               </div>
@@ -238,12 +231,10 @@ export default function WhatWeDoPage({
               {/* Right Feature Card - Exact Figma Card with 3D Tilt */}
               <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center">
                 <TiltCard maxTilt={3.5} className="w-full max-w-[360px]">
-                  <motion.img
-                    whileHover={{ scale: 1.04 }}
-                    transition={{ duration: 0.4, ease: cinematicEase }}
+                  <img
                     src="/assets/figma/whatwedo_card2_exact.png"
                     alt="02 AI & Data Automation"
-                    className="w-full h-auto object-contain rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] cursor-pointer"
+                    className="w-full h-auto object-contain rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] cursor-pointer hover:scale-105 transition-transform duration-700 ease-out"
                   />
                 </TiltCard>
               </div>
@@ -260,12 +251,10 @@ export default function WhatWeDoPage({
               {/* Left Feature Card - Exact Figma Card with 3D Tilt */}
               <div className="lg:col-span-5 flex justify-center">
                 <TiltCard maxTilt={3.5} className="w-full max-w-[360px]">
-                  <motion.img
-                    whileHover={{ scale: 1.04 }}
-                    transition={{ duration: 0.4, ease: cinematicEase }}
+                  <img
                     src="/assets/figma/whatwedo_card3_exact.png"
                     alt="03 Government Services"
-                    className="w-full h-auto object-contain rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] cursor-pointer"
+                    className="w-full h-auto object-contain rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] cursor-pointer hover:scale-105 transition-transform duration-700 ease-out"
                   />
                 </TiltCard>
               </div>
@@ -351,12 +340,10 @@ export default function WhatWeDoPage({
               {/* Right Feature Card - Exact Figma Card with 3D Tilt */}
               <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center">
                 <TiltCard maxTilt={3.5} className="w-full max-w-[360px]">
-                  <motion.img
-                    whileHover={{ scale: 1.04 }}
-                    transition={{ duration: 0.4, ease: cinematicEase }}
+                  <img
                     src="/assets/figma/whatwedo_card4_exact.png"
                     alt="04 Human & AI Experience Design"
-                    className="w-full h-auto object-contain rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] cursor-pointer"
+                    className="w-full h-auto object-contain rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.06)] cursor-pointer hover:scale-105 transition-transform duration-700 ease-out"
                   />
                 </TiltCard>
               </div>

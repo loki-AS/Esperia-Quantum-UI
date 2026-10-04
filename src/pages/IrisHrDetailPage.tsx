@@ -76,7 +76,7 @@ export default function IrisHrDetailPage({
               <img
                 src="/assets/figma/exact_iris_hr_hq.png"
                 alt="IRIS HR System Platform"
-                className="w-full h-auto object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.08)]"
+                className="w-full h-auto object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.08)] cursor-pointer hover:scale-105 transition-transform duration-500 ease-out"
               />
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function IrisHrDetailPage({
         {/* Video placeholder */}
         <section className="mb-16 sm:mb-20">
           <div className="relative w-full aspect-[16/9] sm:aspect-[2.15/1] bg-[#0A0A0A] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center group cursor-pointer border border-neutral-900">
-            <img src="/assets/figma/exact_iris_hr_hq.png" alt="IRIS HR presentation" className="absolute inset-0 w-full h-full object-cover opacity-70" />
+            <img src="/assets/figma/exact_iris_hr_hq.png" alt="IRIS HR presentation" className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700 ease-out" />
             <div className="absolute inset-0 bg-black/30 pointer-events-none" />
             <button type="button" aria-label="Play video demonstration" className="relative z-10 w-16 h-12 sm:w-20 sm:h-14 rounded-xl sm:rounded-2xl bg-white/20 hover:bg-white/35 backdrop-blur-md flex items-center justify-center border border-white/25 shadow-[0_10px_30px_rgba(0,0,0,0.6)] transition-all duration-300 group-hover:scale-110 cursor-pointer">
               <div className="w-0 h-0 border-t-[8px] sm:border-t-[10px] border-t-transparent border-l-[14px] sm:border-l-[18px] border-l-white border-b-[8px] sm:border-b-[10px] border-b-transparent ml-1" />
@@ -123,7 +123,7 @@ export default function IrisHrDetailPage({
           <h2 className="text-2xl sm:text-3xl font-bold font-['Parkinsans',sans-serif] text-[#0A0A0A] mb-8">Other Works</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <CinematicReveal delay={0.05} direction="up">
+            <CinematicReveal delay={0} direction="up">
               <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
                   <img src="/assets/figma/other_works_watermelon_hq.png" alt="Watermelon" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -137,7 +137,7 @@ export default function IrisHrDetailPage({
               </MotionCard>
             </CinematicReveal>
 
-            <CinematicReveal delay={0.1} direction="up">
+            <CinematicReveal delay={0.2} direction="up">
               <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
                   <img src="/assets/figma/other_works_young_genius_hq.png" alt="Young Genius Program" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -151,7 +151,7 @@ export default function IrisHrDetailPage({
               </MotionCard>
             </CinematicReveal>
 
-            <CinematicReveal delay={0.15} direction="up">
+            <CinematicReveal delay={0.4} direction="up">
               <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
                   <img src="/assets/figma/other_works_tasconnect_hq.png" alt="TASConnect" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />

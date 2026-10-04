@@ -99,7 +99,7 @@ export default function WatermelonDetailPage({
               <img
                 src="/assets/figma/watermelon_detail_mockup_hq.png"
                 alt="Watermelon Reliability Platform"
-                className="w-full h-auto object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.08)]"
+                className="w-full h-auto object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.08)] cursor-pointer hover:scale-105 transition-transform duration-500 ease-out"
               />
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function WatermelonDetailPage({
             <img
               src="/assets/figma/watermelon_video_bg.png"
               alt="Video presentation"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
             {/* Ambient subtle gradient */}
             <div className="absolute inset-0 bg-black/30 pointer-events-none" />
@@ -189,7 +189,7 @@ export default function WatermelonDetailPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             {/* Card 1: TASConnect */}
-            <CinematicReveal delay={0.05} direction="up">
+            <CinematicReveal delay={0} direction="up">
               <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
                   <img
@@ -215,7 +215,7 @@ export default function WatermelonDetailPage({
             </CinematicReveal>
 
             {/* Card 2: Young Genius Program */}
-            <CinematicReveal delay={0.1} direction="up">
+            <CinematicReveal delay={0.2} direction="up">
               <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
                   <img
@@ -241,7 +241,7 @@ export default function WatermelonDetailPage({
             </CinematicReveal>
 
             {/* Card 3: IRIS HR System */}
-            <CinematicReveal delay={0.15} direction="up">
+            <CinematicReveal delay={0.4} direction="up">
               <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
                   <img

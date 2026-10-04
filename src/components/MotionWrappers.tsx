@@ -46,10 +46,10 @@ export function CinematicReveal({
   children,
   direction = 'up',
   delay = 0,
-  duration = 0.45,
-  distance = 16,
+  duration = 0.75,
+  distance = 24,
   className = '',
-  amount = 0.05,
+  amount = 0.2,
   once = true
 }: CinematicRevealProps) {
   const shouldReduceMotion = useReducedMotion();
@@ -298,47 +298,6 @@ export function TiltCard({
   );
 }
 
-/**
- * Subtle organic floating breath animation for 3D graphics (anti-gravity sensation)
- */
-export function FloatingBreath({
-  children,
-  className = '',
-  yRange = [-7, 7],
-  duration = 5.5,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  yRange?: [number, number];
-  duration?: number;
-  delay?: number;
-}) {
-  const shouldReduceMotion = useReducedMotion();
-
-  if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>;
-  }
-
-  return (
-    <motion.div
-      animate={{
-        y: [yRange[0], yRange[1], yRange[0]],
-      }}
-      transition={{
-        duration,
-        repeat: Infinity,
-        repeatType: 'reverse',
-        ease: 'easeInOut',
-        delay,
-      }}
-      className={className}
-      style={{ willChange: 'transform' }}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 /**
  * Subtle scroll parallax wrapper

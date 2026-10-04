@@ -263,7 +263,7 @@ export default function BlogDetailPage({
                 <img
                   src={currentBlog.coverImage}
                   alt={currentBlog.title}
-                  className="w-full h-auto object-cover max-h-[380px]"
+                  className="w-full h-auto object-cover max-h-[380px] cursor-pointer hover:scale-105 transition-transform duration-500 ease-out"
                 />
               </div>
             </div>

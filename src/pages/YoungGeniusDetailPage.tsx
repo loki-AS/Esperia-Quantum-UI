@@ -88,7 +88,7 @@ export default function YoungGeniusDetailPage({
               <img
                 src="/assets/figma/exact_young_genius_hq.png"
                 alt="Young Genius Program Platform"
-                className="w-full h-auto object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.08)]"
+                className="w-full h-auto object-contain drop-shadow-[0_20px_45px_rgba(0,0,0,0.08)] cursor-pointer hover:scale-105 transition-transform duration-500 ease-out"
               />
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function YoungGeniusDetailPage({
             <img
               src="/assets/figma/exact_young_genius_hq.png"
               alt="Young Genius presentation"
-              className="absolute inset-0 w-full h-full object-cover opacity-70"
+              className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700 ease-out"
             />
             <div className="absolute inset-0 bg-black/30 pointer-events-none" />
             <button
@@ -166,7 +166,7 @@ export default function YoungGeniusDetailPage({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             {/* Watermelon */}
-            <CinematicReveal delay={0.05} direction="up">
+            <CinematicReveal delay={0} direction="up">
               <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
                   <img src="/assets/figma/other_works_watermelon_hq.png" alt="Watermelon" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -182,7 +182,7 @@ export default function YoungGeniusDetailPage({
             </CinematicReveal>
 
             {/* IRIS HR */}
-            <CinematicReveal delay={0.1} direction="up">
+            <CinematicReveal delay={0.2} direction="up">
               <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
                   <img src="/assets/figma/exact_iris_hr_hq.png" alt="IRIS HR System" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -198,7 +198,7 @@ export default function YoungGeniusDetailPage({
             </CinematicReveal>
 
             {/* TASConnect */}
-            <CinematicReveal delay={0.15} direction="up">
+            <CinematicReveal delay={0.4} direction="up">
               <MotionCard className="bg-[#F4F4F1] rounded-2xl p-4 sm:p-5 flex flex-col justify-between border border-slate-100 shadow-sm group h-full">
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm aspect-[16/10] flex items-center justify-center mb-4 border border-slate-100/80">
                   <img src="/assets/figma/other_works_tasconnect_hq.png" alt="TASConnect" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />

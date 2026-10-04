@@ -19,7 +19,6 @@ import {
   MotionButton,
   MotionCard,
   TiltCard,
-  FloatingBreath,
   cinematicEase
 } from '../components/MotionWrappers';
 import QuantumCanvas from '../components/QuantumCanvas';
@@ -316,9 +315,6 @@ export default function EsperiaLanding({
                 />
               </div>
 
-              {/* Ambient subtle light glow */}
-              <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-white/[0.03] rounded-full blur-[140px] pointer-events-none z-[2]" />
-
               {/* Main Hero Stage */}
               <div className="max-w-[1440px] w-full mx-auto px-6 sm:px-12 lg:px-16 pt-32 sm:pt-36 lg:pt-40 pb-8 sm:pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
 
@@ -361,13 +357,11 @@ export default function EsperiaLanding({
                 <div className="lg:col-span-6 flex justify-center lg:justify-end relative group">
                   <div className="relative w-full max-w-[640px] lg:max-w-[760px] xl:max-w-[820px] -mr-4 lg:-mr-12 xl:-mr-16 min-h-[340px] sm:min-h-[420px] lg:min-h-[480px] flex items-center justify-center lg:justify-end">
                     {slide.imageSrc ? (
-                      <FloatingBreath yRange={[-8, 8]} duration={6}>
-                        <img
-                          src={slide.imageSrc}
-                          alt={slide.imageAlt}
-                          className="w-full h-auto max-h-[540px] object-contain select-none pointer-events-none drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)] group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                        />
-                      </FloatingBreath>
+                      <img
+                        src={slide.imageSrc}
+                        alt={slide.imageAlt}
+                        className="w-full h-auto max-h-[540px] object-contain select-none pointer-events-none drop-shadow-[0_24px_48px_rgba(0,0,0,0.35)] group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                      />
                     ) : (
                       <div className="w-full h-full min-h-[340px]" />
                     )}
@@ -448,14 +442,12 @@ export default function EsperiaLanding({
               </div>
             </CinematicReveal>
 
-            {/* Floating 3D Crystal Visual */}
+            {/* 3D Crystal Visual */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <motion.img
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.4, ease: cinematicEase }}
+              <img
                 src="/assets/figma/93db253d9a77bca6768960eed7492c046fe70768.png"
                 alt="Esperia Intelligent Vision"
-                className="w-72 sm:w-96 lg:w-[460px] xl:w-[500px] h-auto object-contain select-none cursor-pointer drop-shadow-sm"
+                className="w-72 sm:w-96 lg:w-[460px] xl:w-[500px] h-auto object-contain select-none cursor-pointer drop-shadow-sm hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
           </div>
@@ -490,7 +482,7 @@ export default function EsperiaLanding({
             ].map((card, idx) => (
               <CinematicReveal
                 key={idx}
-                delay={idx * 0.08}
+                delay={idx * 0.2}
                 className="h-full"
               >
                 <TiltCard maxTilt={3.5} className="h-full">
@@ -832,14 +824,12 @@ export default function EsperiaLanding({
 
             {/* Right 3D Artwork Column */}
             <div className="w-full md:w-[38%] lg:w-[35%] flex justify-center md:justify-end items-center relative md:static">
-              <div className="relative md:absolute md:right-4 lg:right-8 xl:right-12 md:top-1/2 md:-translate-y-1/2 w-full max-w-[280px] sm:max-w-[320px] md:max-w-none md:w-[310px] lg:w-[355px] xl:w-[395px] pointer-events-none select-none z-10 flex justify-center">
-                <FloatingBreath yRange={[-6, 6]} duration={5.5}>
-                  <img
-                    src="/assets/figma/2007eccd674cd45280b84a0c5e53c6f8ab9f5331.png"
-                    alt="Enterprise Delivery Model Architecture"
-                    className="w-full h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.2)] group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-                  />
-                </FloatingBreath>
+              <div className="relative md:absolute md:right-4 lg:right-8 xl:right-12 md:top-1/2 md:-translate-y-1/2 w-full max-w-[280px] sm:max-w-[320px] md:max-w-none md:w-[310px] lg:w-[355px] xl:w-[395px] pointer-events-auto select-none z-10 flex justify-center">
+                <img
+                  src="/assets/figma/2007eccd674cd45280b84a0c5e53c6f8ab9f5331.png"
+                  alt="Enterprise Delivery Model Architecture"
+                  className="w-full h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.2)] cursor-pointer hover:scale-105 group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                />
               </div>
             </div>
           </div>
@@ -1213,15 +1203,11 @@ export default function EsperiaLanding({
 
             {/* 3D Woman Artwork - anchored to Frame bottom, clipped flush by frame boundary */}
             <div className="hidden lg:flex absolute right-8 sm:right-12 lg:right-16 xl:right-20 bottom-0 w-[295px] xl:w-[325px] z-20 justify-end pointer-events-auto select-none">
-              <FloatingBreath yRange={[-5, 5]} duration={5.5}>
-                <motion.img
-                  whileHover={{ scale: 1.06 }}
-                  transition={{ duration: 0.4, ease: cinematicEase }}
-                  src="/assets/figma/digital_products_woman_clean.png"
-                  alt="Digital Products Real Impact"
-                  className="w-full h-auto object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,0.08)] cursor-pointer origin-bottom"
-                />
-              </FloatingBreath>
+              <img
+                src="/assets/figma/digital_products_woman_clean.png"
+                alt="Digital Products Real Impact"
+                className="w-full h-auto object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,0.08)] cursor-pointer origin-bottom hover:scale-105 transition-transform duration-700 ease-out"
+              />
             </div>
 
             {/* Mobile Artwork (positioned within mobile card) */}
@@ -1294,7 +1280,7 @@ export default function EsperiaLanding({
               date: "2 Jan 2025 / John Doe"
             }
           ].map((post, i) => (
-            <CinematicReveal key={i} delay={i * 0.1}>
+            <CinematicReveal key={i} delay={i * 0.2}>
               <article
                 className="colossal-card group cursor-pointer bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-colossal hover:shadow-2xl hover:border-[#C5445A]/30 transition-all duration-500 flex flex-col justify-between h-full"
               >

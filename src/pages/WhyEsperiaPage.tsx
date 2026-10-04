@@ -8,7 +8,6 @@ import {
   MotionButton,
   MotionCard,
   TiltCard,
-  FloatingBreath,
 } from '../components/MotionWrappers';
 import QuantumCanvas from '../components/QuantumCanvas';
 
@@ -122,15 +121,13 @@ export default function WhyEsperiaPage({
               />
             </div>
 
-            {/* 3D Saturn / Orbital Planetary Graphic with Floating Zero-G Breath */}
+            {/* 3D Saturn / Orbital Planetary Graphic — stable with cursor zoom */}
             <div className="hidden md:block absolute right-0 sm:right-2 lg:right-6 xl:right-10 top-1/2 -translate-y-1/2 w-[440px] lg:w-[550px] xl:w-[613px] h-auto z-20 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] pointer-events-auto">
-              <FloatingBreath yRange={[-8, 8]} duration={6}>
-                <img
-                  src="/assets/figma/whyesperia_hero_3d.png"
-                  alt="Esperia Enterprise Delivery Model 3D Graphic"
-                  className="w-full h-auto object-contain select-none cursor-pointer transform-gpu transition-transform duration-500 ease-out hover:scale-105 active:scale-100 will-change-transform"
-                />
-              </FloatingBreath>
+              <img
+                src="/assets/figma/whyesperia_hero_3d.png"
+                alt="Esperia Enterprise Delivery Model 3D Graphic"
+                className="w-full h-auto object-contain select-none cursor-pointer transform-gpu transition-transform duration-700 ease-out hover:scale-105 active:scale-100 will-change-transform"
+              />
             </div>
 
             <div className="relative z-10 max-w-[640px] lg:max-w-[720px] flex flex-col">
@@ -171,7 +168,7 @@ export default function WhyEsperiaPage({
               <img
                 src="/assets/figma/whyesperia_hero_3d.png"
                 alt="Esperia Enterprise Delivery Model 3D Graphic"
-                className="w-full h-auto object-contain select-none cursor-pointer transform-gpu transition-transform duration-500 ease-out hover:scale-105 will-change-transform"
+                className="w-full h-auto object-contain select-none cursor-pointer transform-gpu transition-transform duration-700 ease-out hover:scale-105 will-change-transform"
               />
             </div>
           </div>
@@ -193,7 +190,7 @@ export default function WhyEsperiaPage({
                 return (
                   <CinematicReveal
                     key={item.number}
-                    delay={index * 0.05}
+                    delay={(index % 4) * 0.2}
                     direction="up"
                     className={`group flex items-start gap-5 sm:gap-6 ${
                       index === 0 ? 'pt-0 pb-8 sm:pb-9' : isLast ? 'pt-8 sm:pt-9 pb-0' : 'py-8 sm:py-9'

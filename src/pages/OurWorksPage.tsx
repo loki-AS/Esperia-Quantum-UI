@@ -7,7 +7,6 @@ import {
   CinematicHeading,
   MotionButton,
   MotionCard,
-  FloatingBreath,
 } from '../components/MotionWrappers';
 import QuantumCanvas from '../components/QuantumCanvas';
 
@@ -78,15 +77,13 @@ export default function OurWorksPage({
               />
             </div>
 
-            {/* 3D Isometric Platform Graphic with Floating Zero-G Breath */}
+            {/* 3D Isometric Platform Graphic — stable with cursor zoom */}
             <div className="hidden md:block absolute right-0 sm:right-2 lg:right-6 xl:right-10 top-1/2 -translate-y-1/2 w-[440px] lg:w-[540px] xl:w-[600px] h-auto z-20 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] pointer-events-auto">
-              <FloatingBreath yRange={[-7, 7]} duration={6}>
-                <img
-                  src="/assets/figma/exact_hero_3d_hq.png"
-                  alt="AI & Cloud Solutions Ecosystem"
-                  className="w-full h-auto object-contain select-none cursor-pointer transform-gpu transition-transform duration-500 ease-out hover:scale-105 active:scale-100 will-change-transform"
-                />
-              </FloatingBreath>
+              <img
+                src="/assets/figma/exact_hero_3d_hq.png"
+                alt="AI & Cloud Solutions Ecosystem"
+                className="w-full h-auto object-contain select-none cursor-pointer transform-gpu transition-transform duration-500 ease-out hover:scale-105 active:scale-100 will-change-transform"
+              />
             </div>
 
             <div className="relative z-10 max-w-[640px] lg:max-w-[720px] flex flex-col">
@@ -156,7 +153,7 @@ export default function OurWorksPage({
                 <img
                   src="/assets/figma/exact_watermelon_hq.png"
                   alt="Watermelon Reliability Platform"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
             </div>
@@ -216,7 +213,7 @@ export default function OurWorksPage({
                 <img
                   src="/assets/figma/exact_young_genius_hq.png"
                   alt="Young Genius Adaptive Education Platform"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
             </div>
@@ -232,7 +229,7 @@ export default function OurWorksPage({
                 <img
                   src="/assets/figma/exact_iris_hr_hq.png"
                   alt="IRIS HR System Platform"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
             </div>
@@ -292,7 +289,7 @@ export default function OurWorksPage({
                 <img
                   src="/assets/figma/exact_tasconnect_hq.png"
                   alt="TASConnect Logistics Intelligence Display"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
             </div>

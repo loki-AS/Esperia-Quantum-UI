@@ -226,7 +226,7 @@ export default function BlogsPage({
         {/* Blog Grid Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {BLOGS_DATA.map((blog, idx) => (
-            <CinematicReveal key={blog.id} delay={idx * 0.05} direction="up">
+            <CinematicReveal key={blog.id} delay={(idx % 3) * 0.2} direction="up">
               <MotionCard
                 onClick={() => handleOpenBlog(blog.id)}
                 className="bg-white rounded-3xl border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.03)] flex flex-col justify-between overflow-hidden group cursor-pointer h-full"
