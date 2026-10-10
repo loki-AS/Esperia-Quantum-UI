@@ -63,7 +63,7 @@ The application is structured into a client-side hash router supporting dedicate
 - **Blog Detail** (`#blog-detail` / `BlogDetailPage.tsx`): Long-form article reading view with inline blockquotes, community comments with nested replies, and recommended articles sidebar.
 
 ### 7. Contact Us & Legal Pages
-- **Contact Us** (`#contact-us` / `ContactPage.tsx`): Studio cards for United States (HQ), Malaysia, and India; interactive inquiry form with validation, focus states, and instant confirmation.
+- **Contact Us** (`#contact-us` / `ContactPage.tsx`): Studio cards for United States (Shrewsbury MA), Malaysia (Johor Bahru), and India (Chennai); interactive inquiry form with validation, focus states, and instant confirmation.
 - **Privacy Policy** (`#privacy` / `PrivacyPolicyPage.tsx`): Full data protection disclosure, GDPR/CCPA alignment, cookies, and user rights.
 - **Terms of Service** (`#terms` / `TermsOfServicePage.tsx`): Enterprise service level agreements, intellectual property rights, and platform terms.
 

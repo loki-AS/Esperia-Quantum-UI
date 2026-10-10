@@ -210,7 +210,7 @@ export default function ContactPage({
                 </h2>
 
                 <p className="text-[#6B7280] text-[16px] font-normal font-manrope leading-[1.75] max-w-[587px]">
-                  Pacific hake false trevally queen parrotfish black prickleback mosshead warbonnet sweeper! Greenling sleeper.
+                  Connect directly with our global engineering and consultancy studios in the United States, Malaysia, and India to accelerate your enterprise roadmap.
                 </p>
               </CinematicReveal>
 
@@ -225,13 +225,21 @@ export default function ContactPage({
                         <span className="text-[13px] font-semibold text-[#555555] font-manrope leading-[24px] block uppercase tracking-wider mb-2">
                           UNITED STATES - HEAD QUARTERS
                         </span>
-                        <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors pb-5">
-                          Esperia LLC<br />Wyoming, United States
+                        <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors mb-2">
+                          Esperia USA
                         </h3>
+                        <p className="text-[14px] text-[#555555] font-manrope leading-relaxed pb-4">
+                          9, Lexington rd,<br />
+                          Shrewsbury MA 01545
+                        </p>
                       </div>
 
-                      <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] pt-2 border-t border-gray-100/80">
-                        <div>hello@esperia.me</div>
+                      <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] pt-3 border-t border-gray-100/80">
+                        <div>
+                          <a href="mailto:connect@esperiaquantum.com" className="hover:text-[#C5445A] transition-colors">
+                            connect@esperiaquantum.com
+                          </a>
+                        </div>
                         <div>+91-123 456 765</div>
                       </div>
                     </MotionCard>
@@ -244,13 +252,22 @@ export default function ContactPage({
                         <span className="text-[13px] font-semibold text-[#555555] font-manrope leading-[24px] block uppercase tracking-wider mb-2">
                           MALAYSIA
                         </span>
-                        <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors pb-5">
-                          Esperia Quantum Sdn Bhd<br />Kuala Lumpur, Malaysia
+                        <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors mb-2">
+                          Esperia Quantum Malaysia
                         </h3>
+                        <p className="text-[14px] text-[#555555] font-manrope leading-relaxed pb-4">
+                          Suite 1705, Level 17, Menara Landmark,<br />
+                          No. 12, Jalan Ngee Heng,<br />
+                          80000 Johor Bahru, Johor
+                        </p>
                       </div>
 
-                      <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] pt-2 border-t border-gray-100/80">
-                        <div>hello@esperia.me</div>
+                      <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] pt-3 border-t border-gray-100/80">
+                        <div>
+                          <a href="mailto:connect@esperiaquantum.com" className="hover:text-[#C5445A] transition-colors">
+                            connect@esperiaquantum.com
+                          </a>
+                        </div>
                         <div>+91-123 456 765</div>
                       </div>
                     </MotionCard>
@@ -259,18 +276,26 @@ export default function ContactPage({
 
                 {/* Row 2: India Hub (#3019:1239) */}
                 <CinematicReveal delay={0.2} direction="up">
-                  <MotionCard className="bg-[#FAFAFA] rounded-[30px] p-[32px] flex flex-col justify-between border border-transparent hover:border-[#C5445A]/20 transition-all duration-300 group shadow-sm hover:shadow-md">
+                  <MotionCard className="bg-[#FAFAFA] rounded-[30px] p-[32px] flex flex-col sm:flex-row sm:items-center justify-between gap-6 border border-transparent hover:border-[#C5445A]/20 transition-all duration-300 group shadow-sm hover:shadow-md">
                     <div>
                       <span className="text-[13px] font-semibold text-[#555555] font-manrope leading-[24px] block uppercase tracking-wider mb-2">
                         INDIA
                       </span>
-                      <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors pb-5">
-                        Esperia Studio
+                      <h3 className="text-[20px] font-bold text-[#111111] font-manrope leading-[1.38] group-hover:text-[#C5445A] transition-colors mb-2">
+                        Esperia Quantum India
                       </h3>
+                      <p className="text-[14px] text-[#555555] font-manrope leading-relaxed">
+                        F-121, SBIOA UNITY ENCLAVE, MAMBAKKAM,<br />
+                        Chennai 600127
+                      </p>
                     </div>
 
-                    <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] pt-2 border-t border-gray-100/80">
-                      <div>hello@esperia.me</div>
+                    <div className="text-[14px] font-medium text-[#444444] font-manrope leading-[28px] sm:text-right pt-3 sm:pt-0 border-t sm:border-t-0 sm:border-l border-gray-100/80 sm:pl-8 shrink-0">
+                      <div>
+                        <a href="mailto:connect@esperiaquantum.com" className="hover:text-[#C5445A] transition-colors">
+                          connect@esperiaquantum.com
+                        </a>
+                      </div>
                       <div>+91-123 456 765</div>
                     </div>
                   </MotionCard>
