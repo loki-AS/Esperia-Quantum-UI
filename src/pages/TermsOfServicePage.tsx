@@ -75,7 +75,7 @@ export default function TermsOfServicePage({
       num: '08',
       title: 'Governing Law & Legal Contact',
       content:
-        'These terms shall be interpreted in accordance with applicable corporate laws. For inquiries regarding licensing agreements, contract terms, or legal notices, please write to nammatradeofficial@gmail.com.',
+        'These terms shall be interpreted in accordance with applicable corporate laws. For inquiries regarding licensing agreements, contract terms, or legal notices, please write to connect@esperiaquantum.com.',
     },
   ];
 
@@ -182,7 +182,7 @@ export default function TermsOfServicePage({
                     </p>
                   </div>
                   <MotionLink
-                    href="mailto:nammatradeofficial@gmail.com?subject=Enterprise%20Legal%20Inquiry%20-%20Esperia"
+                    href="mailto:connect@esperiaquantum.com?subject=Enterprise%20Legal%20Inquiry%20-%20Esperia"
                     className="px-6 py-3 rounded-full bg-gradient-to-r from-[#F56F6A] to-[#C5445A] text-white font-semibold text-sm hover:brightness-110 transition-all whitespace-nowrap cursor-pointer shrink-0 inline-block text-center"
                   >
                     Contact Legal Desk

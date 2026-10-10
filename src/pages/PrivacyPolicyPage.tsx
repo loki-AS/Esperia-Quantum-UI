@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage({
       num: '07',
       title: 'Contact Information & Inquiries',
       content:
-        'For any questions, requests regarding your data, or compliance inquiries, please contact our privacy and data governance desk directly at nammatradeofficial@gmail.com.',
+        'For any questions, requests regarding your data, or compliance inquiries, please contact our privacy and data governance desk directly at connect@esperiaquantum.com.',
     },
   ];
 
@@ -176,7 +176,7 @@ export default function PrivacyPolicyPage({
                     </p>
                   </div>
                   <MotionLink
-                    href="mailto:nammatradeofficial@gmail.com?subject=Privacy%20Inquiry%20-%20Esperia"
+                    href="mailto:connect@esperiaquantum.com?subject=Privacy%20Inquiry%20-%20Esperia"
                     className="px-6 py-3 rounded-full bg-gradient-to-r from-[#F56F6A] to-[#C5445A] text-white font-semibold text-sm hover:brightness-110 transition-all whitespace-nowrap cursor-pointer shrink-0 inline-block text-center"
                   >
                     Contact Data Desk

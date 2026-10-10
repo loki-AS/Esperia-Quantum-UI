@@ -93,7 +93,7 @@ export default function ContactPage({
       formPayload.append('attachment', csvBlob, safeFileName);
 
       // Note: do not set Content-Type header so browser sets multipart/form-data boundary
-      const response = await fetch('https://formsubmit.co/ajax/nammatradeofficial@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/connect@esperiaquantum.com', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -112,7 +112,7 @@ export default function ContactPage({
     } catch (err: any) {
       console.error('Contact form submission error:', err);
       setErrorMessage(
-        'Unable to send automatically right now. You can email us directly at nammatradeofficial@gmail.com'
+        'Unable to send automatically right now. You can email us directly at connect@esperiaquantum.com'
       );
     } finally {
       setIsSubmitting(false);
@@ -318,7 +318,7 @@ export default function ContactPage({
                         </h4>
                         <p className="text-sm text-slate-300 max-w-xs font-manrope leading-relaxed">
                           Thank you for reaching out. Your request has been dispatched to our team at{' '}
-                          <span className="text-white font-medium">nammatradeofficial@gmail.com</span>. We will respond promptly.
+                          <span className="text-white font-medium">connect@esperiaquantum.com</span>. We will respond promptly.
                         </p>
                         <MotionButton
                           onClick={() => {
@@ -337,7 +337,7 @@ export default function ContactPage({
                           <div className="p-3.5 rounded-2xl bg-rose-950/60 border border-rose-500/30 text-rose-200 text-xs font-manrope leading-relaxed flex flex-col gap-1.5 animate-in fade-in">
                             <span className="font-semibold">{errorMessage}</span>
                             <a
-                              href={`mailto:nammatradeofficial@gmail.com?subject=${encodeURIComponent(formData.subject || 'Inquiry from Esperia Website')}&body=${encodeURIComponent(`Name: ${formData.fullName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`}
+                              href={`mailto:connect@esperiaquantum.com?subject=${encodeURIComponent(formData.subject || 'Inquiry from Esperia Website')}&body=${encodeURIComponent(`Name: ${formData.fullName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`}
                               className="text-white underline hover:text-[#F56F6A] font-medium"
                             >
                               Click here to send email via your email app
