@@ -152,34 +152,8 @@ export default function Footer({
                 Digital experience &amp; technology consultancy.
               </p>
 
-              {/* Row of 6 Social Media Icons (with Coral-to-Teal Gradient) */}
+              {/* Social Media Icons: Instagram & LinkedIn */}
               <div className="flex items-center gap-5 mt-6">
-                {/* Facebook */}
-                <a
-                  href="https://facebook.com/esperia.quantum"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group transition-all duration-300 hover:scale-115 hover:-translate-y-0.5 opacity-85 hover:opacity-100 cursor-pointer"
-                  aria-label="Facebook"
-                >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="url(#footer-social-gradient)">
-                    <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.52-.14-2.71-.14-2.8 0-4.79 1.71-4.79 4.93v2.57H7v4h3.01v10h3.99v-10z" />
-                  </svg>
-                </a>
-
-                {/* X (Twitter) */}
-                <a
-                  href="https://x.com/esperia_quantum"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group transition-all duration-300 hover:scale-115 hover:-translate-y-0.5 opacity-85 hover:opacity-100 cursor-pointer"
-                  aria-label="X (Twitter)"
-                >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="url(#footer-social-gradient)">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </a>
-
                 {/* Instagram */}
                 <a
                   href="https://www.instagram.com/esperia.quantum"
@@ -203,13 +177,13 @@ export default function Footer({
                   </svg>
                 </a>
 
-                {/* Dribbble */}
+                {/* LinkedIn */}
                 <a
-                  href="https://dribbble.com/esperia_quantum"
+                  href="https://www.linkedin.com/company/esperia-quantum"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group transition-all duration-300 hover:scale-115 hover:-translate-y-0.5 opacity-85 hover:opacity-100 cursor-pointer"
-                  aria-label="Dribbble"
+                  aria-label="LinkedIn"
                 >
                   <svg
                     className="w-4 h-4"
@@ -220,53 +194,9 @@ export default function Footer({
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94" />
-                    <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32" />
-                    <path d="M8.5 2.5c4.77 5.83 6.46 11.95 7.74 19.3" />
-                  </svg>
-                </a>
-
-                {/* Behance */}
-                <a
-                  href="https://behance.net/esperia_quantum"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group transition-all duration-300 hover:scale-115 hover:-translate-y-0.5 opacity-85 hover:opacity-100 cursor-pointer"
-                  aria-label="Behance"
-                >
-                  <svg className="w-5 h-4" viewBox="0 0 24 24" fill="url(#footer-social-gradient)">
-                    <path d="M7.8 12.3c.9-.4 1.5-1.2 1.5-2.3 0-1.8-1.4-2.8-3.4-2.8H1.5v10.5h4.6c2.2 0 3.8-1.2 3.8-3.1 0-1.1-.8-2-2.1-2.3zm-3.5-3.3h1.4c1 0 1.6.4 1.6 1.2 0 .9-.7 1.3-1.7 1.3H4.3V9zm1.6 6.9H4.3v-2.7h1.6c1.1 0 1.9.4 1.9 1.3 0 1-.8 1.4-1.9 1.4zm10.7-3.8c-1.9 0-3.3 1.4-3.3 3.5 0 2.2 1.4 3.6 3.5 3.6 1.5 0 2.7-.8 3.1-2h-1.6c-.3.5-.8.7-1.5.7-.9 0-1.7-.6-1.8-1.7h5.1c.1-2.4-1.5-4.1-3.5-4.1zm-1.6 2.8c.2-.9.8-1.4 1.6-1.4.8 0 1.4.5 1.5 1.4h-3.1zM14.4 7.6h4.5v1.2h-4.5V7.6z" />
-                  </svg>
-                </a>
-
-                {/* Medium */}
-                <a
-                  href="https://medium.com/@esperia_quantum"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group transition-all duration-300 hover:scale-115 hover:-translate-y-0.5 opacity-85 hover:opacity-100 cursor-pointer"
-                  aria-label="Medium"
-                >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24">
-                    <rect
-                      x="2"
-                      y="2"
-                      width="20"
-                      height="20"
-                      rx="4.5"
-                      fill="none"
-                      stroke="url(#footer-social-gradient)"
-                      strokeWidth="2"
-                    />
-                    <path
-                      d="M6.5 16.5V7.5L10.5 13.5L14.5 7.5V16.5"
-                      fill="none"
-                      stroke="url(#footer-social-gradient)"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
                   </svg>
                 </a>
               </div>
