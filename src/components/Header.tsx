@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cinematicEase } from './MotionWrappers';
@@ -36,23 +36,13 @@ export default function Header({
 }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [navVisible, setNavVisible] = useState(true);
-  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsScrolled(currentScrollY > 30);
-
-      // Hide only when scrolled past 200px and scrolling downwards
-      if (currentScrollY > 200 && currentScrollY > lastScrollY.current + 10) {
-        setNavVisible(false);
-      } else if (currentScrollY < lastScrollY.current - 6 || currentScrollY <= 140) {
-        setNavVisible(true);
-      }
-      lastScrollY.current = currentScrollY;
+      setIsScrolled(window.scrollY > 20);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -102,16 +92,12 @@ export default function Header({
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ease-out transform ${
-        navVisible ? 'translate-y-0' : '-translate-y-full pointer-events-none'
-      } ${
+      className={`sticky top-0 z-50 transition-[background-color,backdrop-filter,box-shadow,border-color] duration-300 ease-out ${
         solidBg || isScrolled ? scrolledBg : 'bg-transparent'
       } ${className}`}
     >
       <div
-        className={`max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? 'h-16 sm:h-20' : 'h-20 sm:h-24'
-        }`}
+        className="max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 flex items-center justify-between h-20 sm:h-24"
       >
         {/* Logo with micro-interaction */}
         <button
